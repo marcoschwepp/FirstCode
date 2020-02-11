@@ -1,0 +1,51 @@
+using System;
+
+namespace Projekt
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            start:
+            string Pin;
+            int triesleft = 3;
+            string SuperPin = ("newpin");
+
+
+            Console.WriteLine("Please chose your PIN");
+            Pin = Console.ReadLine();
+            Console.WriteLine("Please enter your PIN:");
+
+
+
+
+
+            while (triesleft > 0)
+            {
+                if (Console.ReadLine() == Pin)
+                {
+                    Console.WriteLine("Unlocked!");
+                }
+                else
+                {
+                    triesleft--;
+                    Console.WriteLine("Wrong Code " + triesleft + " tries left.");
+                }
+
+
+            }
+            SuperPin:
+            Console.WriteLine("Please enter your SuperPin to reset your passwort");
+            Console.ReadLine();
+            if (Console.ReadLine() == SuperPin)
+            {
+                goto start;
+            }
+            else
+            {
+                Console.WriteLine("Wrong SuperPin");
+                goto SuperPin;
+            }
+        }
+    }
+}
